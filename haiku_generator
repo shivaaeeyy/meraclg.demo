@@ -1,0 +1,31 @@
+import random
+
+nouns = ["river", "sky", "mountain", "forest", "wind", "star", "dream", "flower", "tree", "ocean"]
+verbs = ["dances", "whispers", "glows", "swirls", "falls", "shines", "rises", "sings", "grows", "echoes"]
+adjectives = ["golden", "silent", "ancient", "crimson", "dark", "endless", "bright", "soft", "loud", "shimmering"]
+
+
+def generate_haiku():
+    line1 = f"A {random.choice(adjectives)} {random.choice(nouns)}"
+    line2 = f"{random.choice(verbs)} under skies of {random.choice(adjectives)} light"
+    line3 = f"{random.choice(verbs)} echo {random.choice(adjectives)}"
+    
+    haiku = f"""
+    ✨ ~*~ Haiku Magic ~*~ ✨
+    --------------------------
+    {line1}
+    {line2}
+    {line3}
+    --------------------------
+    🌸 ~~~~~~~~~~~~~~~~~~~ 🌸
+    """
+    return haiku
+
+
+def generate_poems(count=5):
+    poems = [generate_haiku() for _ in range(count)]
+    for poem in poems:
+        print(poem)
+
+
+generate_poems()
